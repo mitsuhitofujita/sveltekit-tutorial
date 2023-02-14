@@ -1,0 +1,20 @@
+{
+	"name": "SvelteKit",
+	"dockerComposeFile": [
+		"compose.yml"
+	],
+	"service": "node",
+	"remoteUser": "node",
+	"remoteEnv": {
+	},
+	"workspaceFolder": "/workspace",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"editorconfig.editorconfig",
+				"cweijan.vscode-database-client2",
+				"redhat.vscode-yaml"
+			]
+		}
+	}
+}
