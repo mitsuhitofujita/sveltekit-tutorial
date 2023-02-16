@@ -11,9 +11,10 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"editorconfig.editorconfig",
 				"cweijan.vscode-database-client2",
-				"redhat.vscode-yaml"
+				"editorconfig.editorconfig",
+				"redhat.vscode-yaml",
+				"svelte.svelte-vscode"
 			]
 		}
 	}
