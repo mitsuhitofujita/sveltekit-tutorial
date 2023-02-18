@@ -13,6 +13,7 @@
 			"extensions": [
 				"cweijan.vscode-database-client2",
 				"editorconfig.editorconfig",
+				"prisma.prisma",
 				"redhat.vscode-yaml",
 				"svelte.svelte-vscode"
 			]

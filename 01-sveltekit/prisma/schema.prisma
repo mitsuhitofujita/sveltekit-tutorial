@@ -6,8 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = "mysql://root:password@mariadb:3306/database?sslmode=disable&charset=utf8mb4&serverVersion=mariadb-10.10.3"
+  provider          = "mysql"
+  url               = "mysql://user:password@mariadb:3306/database?sslmode=disable&charset=utf8mb4&serverVersion=mariadb-10.10.3"
+  shadowDatabaseUrl = "mysql://user:password@mariadb:3306/database_shadow?sslmode=disable&charset=utf8mb4&serverVersion=mariadb-10.10.3"
 }
 
 model User {

@@ -15,3 +15,5 @@ services:
       MARIADB_PASSWORD: password
       MARIADB_HOST: mariadb
     restart: always
+    volumes:
+      - ./docker/mariadb/initdb.d:/docker-entrypoint-initdb.d
