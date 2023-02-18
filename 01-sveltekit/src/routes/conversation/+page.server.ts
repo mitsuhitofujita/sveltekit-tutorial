@@ -5,10 +5,10 @@ export const actions: Actions = {
     conversation : async ({request, locals}) => {
         const client = new PrismaClient();
         const data = await request.formData()
-        const content = data.get("content");
+        const subject = data.get("subject");
 
-        if (typeof content !== "string" || !content) {
-            return fail(400, { message: "タイトルと内容は必須入力です。"})
+        if (typeof subject !== "string" || !subject) {
+            return fail(400, { message: "会話のお題は必須入力です。"})
         }
 
         if (!locals.user) return fail(400, {message: "登録されていないユーザーです。"})
@@ -16,7 +16,7 @@ export const actions: Actions = {
         await client.conversation.create({
             data: {
                 userId: locals.user.id,
-                content
+                subject,
             }
         })
 

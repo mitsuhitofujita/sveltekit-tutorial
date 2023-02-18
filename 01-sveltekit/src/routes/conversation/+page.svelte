@@ -7,8 +7,8 @@
 {form.message}
 {/if}
 <form method="POST" action="?/conversation">
-    <label>内容：
-        <input name="content" type="text" />
+    <label>お題：
+        <input name="subject" type="text" />
     </label>
     <button>投稿する</button>
 </form>
