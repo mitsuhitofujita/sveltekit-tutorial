@@ -12,30 +12,30 @@ datasource db {
 }
 
 model User {
-  id         String    @id @default(uuid())
-  name       String    @unique
-  password   String
-  authToken  String    @unique
-  created_at DateTime  @default(now())
-  Comment    Comment[]
-  Post       Conversation[]
+  id        BigInt         @id @default(autoincrement())
+  name      String         @unique
+  password  String
+  authToken String         @unique
+  createdAt DateTime       @default(now())
+  Comment   Comment[]
+  Post      Conversation[]
 }
 
 model Conversation {
-  id         Int       @id @default(autoincrement())
-  userId     String
-  content    String
-  created_at DateTime @default(now())
-  Comment    Comment[]
-  user       User      @relation(fields: [userId], references: [id])
+  id        BigInt    @id @default(autoincrement())
+  userId    BigInt
+  subject   String    @default("")
+  createdAt DateTime  @default(now())
+  Comment   Comment[]
+  user      User      @relation(fields: [userId], references: [id])
 }
 
 model Comment {
-  id         Int      @id @default(autoincrement())
-  userId     String
-  postId     Int
-  content    String
-  created_at DateTime     @default(now())
-  post       Conversation @relation(fields: [postId], references: [id])
-  user       User         @relation(fields: [userId], references: [id])
+  id        BigInt       @id @default(autoincrement())
+  userId    BigInt
+  postId    BigInt
+  content   String
+  createdAt DateTime     @default(now())
+  post      Conversation @relation(fields: [postId], references: [id])
+  user      User         @relation(fields: [userId], references: [id])
 }
