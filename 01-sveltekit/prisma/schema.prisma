@@ -12,13 +12,13 @@ datasource db {
 }
 
 model User {
-  id        BigInt         @id @default(autoincrement())
-  name      String         @unique
-  password  String
-  authToken String         @unique
-  createdAt DateTime       @default(now())
-  Comment   Comment[]
-  Post      Conversation[]
+  id            BigInt         @id @default(autoincrement())
+  name          String         @unique
+  password      String
+  authToken     String         @unique
+  createdAt     DateTime       @default(now())
+  comments      Comment[]
+  conversations Conversation[]
 }
 
 model Conversation {
@@ -26,16 +26,16 @@ model Conversation {
   userId    BigInt
   subject   String    @default("")
   createdAt DateTime  @default(now())
-  Comment   Comment[]
+  comments  Comment[]
   user      User      @relation(fields: [userId], references: [id])
 }
 
 model Comment {
-  id        BigInt       @id @default(autoincrement())
-  userId    BigInt
-  postId    BigInt
-  content   String
-  createdAt DateTime     @default(now())
-  post      Conversation @relation(fields: [postId], references: [id])
-  user      User         @relation(fields: [userId], references: [id])
+  id             BigInt       @id @default(autoincrement())
+  userId         BigInt
+  conversationId BigInt
+  payload        String
+  createdAt      DateTime     @default(now())
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  user           User         @relation(fields: [userId], references: [id])
 }
