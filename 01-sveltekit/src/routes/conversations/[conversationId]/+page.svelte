@@ -9,8 +9,8 @@
 	};
 
 	export let data: PageData;
+	export let form: ActionData;
 
-	console.log(data);
 	const conversationAuthor: string = data.conversation.user.name;
 	const conversationSubject: string = data.conversation.subject;
 	const conversationCreatedAt: Date = data.conversation.createdAt;
@@ -29,9 +29,24 @@
 	{#each comments as comment}
 		<p>名前：{comment.user.name}</p>
 		<p>日時：{comment.createdAt}</p>
-		<p>コメント：{comment.subject}</p>
+		<p>コメント：{comment.payload}</p>
 		<br />
 	{/each}
 {:else}
 	<p>コメントはありません</p>
 {/if}
+<div>
+	{#if form?.message}
+		<p class="error">{form.message}</p>
+	{/if}
+</div>
+<form method="POST" action="?/comment">
+	<input name="payload" type="text" />
+	<button>コメントする</button>
+</form>
+
+<style>
+	.error {
+		color: red;
+	}
+</style>
