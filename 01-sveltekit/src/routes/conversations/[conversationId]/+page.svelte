@@ -1,10 +1,12 @@
 <script lang="ts">
 	import type { PageData } from '../[conversationId]/$types';
+	import type { ActionData } from '../[conversationId]/$types';
+
 	type comment = {
 		user: {
 			name: string;
 		};
-		subject: string;
+		payload: string;
 		createdAt: Date;
 	};
 

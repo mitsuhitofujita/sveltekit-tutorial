@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let id : number;
+    export let id : bigint;
     export let subject: string;
 </script>
 
