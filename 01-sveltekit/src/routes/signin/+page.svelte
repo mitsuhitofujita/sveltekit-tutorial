@@ -1,24 +1,26 @@
 <script lang="ts">
-    import type {ActionData} from './$types';
-    export let form: ActionData
+  import type { ActionData } from './$types'
+  export let form: ActionData
 </script>
 
 <h1>サインイン</h1>
 {#if form?.message}
-    <p class="error">{form.message}</p>
+  <p class="error">{form.message}</p>
 {/if}
 <form method="POST" action="?/signin">
-    <label>名前:
-        <input name="name" type="text" />
-    </label>
-    <label>
-        パスワード：
-        <input name="password" type="password" />
-    </label>
-    <button>ログイン</button>
+  <label
+    >名前:
+    <input name="name" type="text" />
+  </label>
+  <label>
+    パスワード：
+    <input name="password" type="password" />
+  </label>
+  <button>ログイン</button>
 </form>
+
 <style>
-    .error {
-        color: red;
-    }
+  .error {
+    color: red;
+  }
 </style>
