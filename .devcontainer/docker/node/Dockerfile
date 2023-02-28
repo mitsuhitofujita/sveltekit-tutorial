@@ -23,4 +23,7 @@ RUN apt-get update -y && \
     apt-get autoremove -y && \
     apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
-RUN npm install -g playwright
+RUN npm install -g \
+        playwright \
+        wrangler \
+        aws-cdk

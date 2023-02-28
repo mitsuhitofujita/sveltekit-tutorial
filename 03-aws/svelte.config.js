@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-aws';
+import { adapter } from 'sveltekit-adapter-aws';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -13,7 +13,7 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
 			autoDeploy: true,
-			FQDN: 'sveltekit-tutorial-aws.example.com',
+			// FQDN: 'sveltekit-tutorial-aws.example.com',
 			stackName: 'sveltekit-tutorial-aws'
 		})
 	}
